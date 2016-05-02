@@ -7,6 +7,7 @@ namespace PotapanjeBrodova
 {
     public enum RezultatGađanja
     {
+
         Promašaj,
         Pogodak,
         Potonuće

@@ -21,7 +21,7 @@ namespace PotapanjeBrodova
 
         public Polje UputiPucanj()
         {
-            throw new NotImplementedException();
+            return pucač.UputiPucanj();
         }
 
         public void ObradiGađanje(RezultatGađanja rezultat)
@@ -48,5 +48,8 @@ namespace PotapanjeBrodova
         {
             get; private set;
         }
+
+        IPucač pucač;
     }
+
 }

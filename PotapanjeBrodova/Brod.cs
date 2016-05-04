@@ -6,7 +6,7 @@ using System.Text;
 namespace PotapanjeBrodova
 {
     public enum RezultatGađanja
-    {//jj
+    {
 
         Promašaj,
         Pogodak,

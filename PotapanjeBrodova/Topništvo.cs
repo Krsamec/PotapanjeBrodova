@@ -32,6 +32,7 @@ namespace PotapanjeBrodova
         private void PromijeniTaktikuUNapipavanje()
         {
             TrenutnaTaktika = TaktikaGađanja.Napipavanje;
+            pucač = new Napipač(mreža, duljinaBroda);
         }
 
         private void PromijeniTaktikuUOkruživanje()

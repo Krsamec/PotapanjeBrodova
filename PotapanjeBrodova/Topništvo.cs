@@ -21,7 +21,7 @@ namespace PotapanjeBrodova
             this.duljineBrodova.Sort((d1, d2) => { return d2 - d1; });
             PromijeniTaktikuUNapipavanje();
         }
-        //hhh
+        //hhhh
         public Polje UputiPucanj()
         {
             return pucač.UputiPucanj();

@@ -33,8 +33,8 @@ namespace PotapanjeBrodova
 
         public IEnumerable<Polje> DajSlobodnaPolja()
         {
-            // umjesto donje dvije petlje može i kraće (ali puno sporije):
-            //return polja.Cast<Polje>().Where(polje => polje != null).ToList();
+              // umjesto donje dvije petlje može i kraće (ali puno sporije):
+              //return polja.Cast<Polje>().Where(polje => polje != null).ToList();
             List<Polje> slobodnaPolja = new List<Polje>();
             for (int r = 0; r < Redaka; ++r)
             {

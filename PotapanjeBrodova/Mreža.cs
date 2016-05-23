@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace PotapanjeBrodova
 {
@@ -14,7 +15,6 @@ namespace PotapanjeBrodova
         Desno,
         Dolje,
         Lijevo
-
     }
 
     public class Mreža
@@ -86,28 +86,27 @@ namespace PotapanjeBrodova
                     return DajPoljaIspod(redak, stupac);
                 case Smjer.Lijevo:
                     return DajPoljaLijevo(redak, stupac);
-
                 default:
-                    Debug.Assert(false, string.Format("Nije podržan smjer: {0}", smjer.ToString());
+                    Debug.Assert(false, string.Format("Nije podržan smjer: {0}", smjer.ToString()));
+                   
                     return null;
             }
-
         }
+
         private IEnumerable<Polje> DajPoljaIznad(int redak, int stupac)
         {
             List<Polje> slobodna = new List<Polje>();
             while (--redak >= 0 && polja[redak, stupac] != null)
                 slobodna.Add(polja[redak, stupac]);
             return slobodna;
-
         }
+
         private IEnumerable<Polje> DajPoljaDesno(int redak, int stupac)
         {
             List<Polje> slobodna = new List<Polje>();
             while (++stupac < Stupaca && polja[redak, stupac] != null)
                 slobodna.Add(polja[redak, stupac]);
             return slobodna;
-
         }
 
         private IEnumerable<Polje> DajPoljaIspod(int redak, int stupac)
@@ -116,7 +115,6 @@ namespace PotapanjeBrodova
             while (++redak < Redaka && polja[redak, stupac] != null)
                 slobodna.Add(polja[redak, stupac]);
             return slobodna;
-
         }
 
         private IEnumerable<Polje> DajPoljaLijevo(int redak, int stupac)
@@ -125,9 +123,7 @@ namespace PotapanjeBrodova
             while (--stupac >= 0 && polja[redak, stupac] != null)
                 slobodna.Add(polja[redak, stupac]);
             return slobodna;
-
         }
-
 
         private Polje[,] polja;
         public readonly int Redaka;

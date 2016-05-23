@@ -15,14 +15,11 @@ namespace PotapanjeBrodova
 
         public Polje UputiPucanj()
         {
-            // dohvati listu svih kandidata
             List<Polje> polja = DajKandidateZaHorizontalniBrod().ToList();
             polja.AddRange(DajKandidateZaVertikalniBrod());
 
-           int indeks = slučajni.Next(0, polja.Count());
-           return polja[indeks];
-            // slučajnim odabirom izaberi jednoga
-            
+            int indeks = slučajni.Next(0, polja.Count());
+            return polja[indeks];
         }
 
         public IEnumerable<Polje> DajKandidateZaHorizontalniBrod()
@@ -57,7 +54,7 @@ namespace PotapanjeBrodova
             for (int s = 0; s < mreža.Stupaca; ++s)
             {
                 int brojačPolja = 0;
-                for (int r = 0; s < mreža.Redaka; ++r)
+                for (int r = 0; r < mreža.Redaka; ++r)
                 {
                     Polje p = new Polje(r, s);
                     if (slobodna.Contains(p))
@@ -67,7 +64,7 @@ namespace PotapanjeBrodova
 
                     if (brojačPolja >= duljinaBroda)
                     {
-                        for (int rr = r - duljinaBroda + 1; rr <= s; ++rr)
+                        for (int rr = r - duljinaBroda + 1; rr <= r; ++rr)
                             kandidati.Add(new Polje(rr, s));
                     }
                 }
@@ -75,8 +72,21 @@ namespace PotapanjeBrodova
             return kandidati;
         }
 
+        public void EvidentirajRezultat(RezultatGađanja rezultat)
+        {
+            throw new NotImplementedException();
+        }
+
         private Mreža mreža;
         private int duljinaBroda;
         private Random slučajni = new Random();
+
+        public IEnumerable<Polje> PogođenaPolja
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }
